@@ -1,0 +1,7 @@
+.galery {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    place-items: center;
+    row-gap: 20px;
+    column-gap: 10px;
+}

@@ -1,0 +1,9 @@
+.cardContainer{
+    border: solid slategrey;
+    max-width: 300px;
+}
+
+.bottom{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
