@@ -7,6 +7,8 @@ type CharacterGaleryProps = {
 }
 
 export default function GaleryPage({characters}: CharacterGaleryProps) {
+
+
     return <div>
         <Header/>
         <CharacterGalery characters={characters} />

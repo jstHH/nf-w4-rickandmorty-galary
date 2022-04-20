@@ -1,13 +1,22 @@
 import {rmCharacter} from "../model/rmCharacter";
 import "./CharacterCard.css"
+import {useNavigate} from "react-router-dom";
 
 
 type characterCardProps = {
     character:rmCharacter;
 }
 
-export default function characterCard({character}: characterCardProps) {
-    return <div className={"cardContainer"}>
+export default function CharacterCard({character}: characterCardProps) {
+
+    const navigate = useNavigate();
+
+
+    function onCardClick() {
+        navigate(`/character/${character.id}`)
+    }
+
+    return <div className={"cardContainer"} onClick={onCardClick}>
         <h1>{character.name}</h1>
         <h2>ID: {character.id}</h2>
         <img src={character.image} />
@@ -20,3 +29,4 @@ export default function characterCard({character}: characterCardProps) {
     </div>
 
 }
+

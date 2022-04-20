@@ -10,7 +10,6 @@ export default function Header() {
             <img className={"image"} src={"https://rickandmortyapi.com/icons/icon-512x512.png"} />
             <Link to={"/impressum"}>Impressum</Link>
         </div>
-
         <h1>Rick and Morty Character Galery</h1>
     </header>
 }
