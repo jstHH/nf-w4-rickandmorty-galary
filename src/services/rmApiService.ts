@@ -1,8 +1,5 @@
 import axios from "axios";
 
-type rmApiServiceProps = {
-    characterID: number;
-}
 
 export default function fetchCharacters () {
     return axios.get('https://rickandmortyapi.com/api/character')
@@ -10,7 +7,7 @@ export default function fetchCharacters () {
         .catch(console.error)
 }
 
-export function fetchCharacter({characterID}: rmApiServiceProps) {
+export function fetchCharacter (characterID: number) {
     return axios.get(`https://rickandmortyapi.com/api/character/${characterID}`)
         .then(response => response.data)
         .catch(console.error)
