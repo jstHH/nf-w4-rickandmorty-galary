@@ -3,6 +3,7 @@ import {useNavigate, useParams} from "react-router-dom";
 import Header from "../components/Header";
 import CharacterDetailsView from "../components/CharacterDetailsView";
 import "./CharacterDetailsPage.css"
+import {fetchCharacter} from "../services/rmApiService";
 
 type CharacterGaleryProps = {
     characters:rmCharacter[]
@@ -14,7 +15,7 @@ type CharacterGaleryProps = {
 export default function CharacterDetailsPage({characters}: CharacterGaleryProps) {
     const params = useParams();
     const id: number = Number(params.id)
-    const character = characters[id - 1]
+    const character = fetchCharacter(id)
 
     const navigate = useNavigate();
 
