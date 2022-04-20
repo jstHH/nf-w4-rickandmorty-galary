@@ -1,0 +1,9 @@
+.characterInfoContainer {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.header {
+    align-self: center;
+}
