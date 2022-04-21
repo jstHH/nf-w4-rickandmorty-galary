@@ -7,20 +7,15 @@ import { Routes, Route} from "react-router-dom";
 import ImpressumPage from "./pages/ImpressumPage";
 import fetchCharacters from "./services/rmApiService";
 import CharacterDetailsPage from "./pages/CharacterDetailsPage";
+import {useCharacters} from "./hooks/CharacterHooks";
 
 
 function App() {
-    const [characters, setCharacters] = useState<rmCharacter[]>([]);
-
-    useEffect(() => {
-        fetchCharacters()
-            .then(body => setCharacters(body.results))
-    }, [])
 
   return (
       <BrowserRouter>
           <Routes>
-              <Route path="/" element={<GaleryPage characters={characters} />}/>
+              <Route path="/" element={<GaleryPage/>}/>
                   <Route path="/impressum" element={<ImpressumPage/>}/>
               <Route path="/character/:id" element={<CharacterDetailsPage />}/>
           </Routes>

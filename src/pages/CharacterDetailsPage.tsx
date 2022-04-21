@@ -5,17 +5,13 @@ import CharacterDetailsView from "../components/CharacterDetailsView";
 import "./CharacterDetailsPage.css"
 import {useEffect, useState} from "react";
 import {fetchCharacter} from "../services/rmApiService";
+import {useCharacter} from "../hooks/CharacterHooks";
 
 
 export default function CharacterDetailsPage() {
     const params = useParams();
-    const id: number = Number(params.id)
-    const [character, setCharacter] = useState<rmCharacter>();
-
-    useEffect(() => {
-        fetchCharacter(id)
-            .then(body => setCharacter(body))
-    }, [])
+    const id: number = Number(params.id);
+    const character = useCharacter(id);
 
     const navigate = useNavigate();
 

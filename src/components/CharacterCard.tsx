@@ -11,7 +11,6 @@ export default function CharacterCard({character}: characterCardProps) {
 
     const navigate = useNavigate();
 
-
     function onCardClick() {
         navigate(`/character/${character.id}`)
     }
