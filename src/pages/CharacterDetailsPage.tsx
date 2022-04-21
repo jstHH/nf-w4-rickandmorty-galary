@@ -4,16 +4,10 @@ import Header from "../components/Header";
 import CharacterDetailsView from "../components/CharacterDetailsView";
 import "./CharacterDetailsPage.css"
 import {useEffect, useState} from "react";
-import fetchCharacter from "../services/rmApiService";
-
-type CharacterGaleryProps = {
-    characters:rmCharacter[]
-}
+import {fetchCharacter} from "../services/rmApiService";
 
 
-
-
-export default function CharacterDetailsPage({characters}: CharacterGaleryProps) {
+export default function CharacterDetailsPage() {
     const params = useParams();
     const id: number = Number(params.id)
     const [character, setCharacter] = useState<rmCharacter>();
@@ -32,7 +26,7 @@ export default function CharacterDetailsPage({characters}: CharacterGaleryProps)
 
     return <div>
         <Header/>
-        <CharacterDetailsView character={character} />
+        {character ? <CharacterDetailsView character={character} />: <p>No Character found</p>}
         <div className={"footer"}>
             <button className={"backButton"} onClick={onButtonClick}>Zurück</button>
         </div>

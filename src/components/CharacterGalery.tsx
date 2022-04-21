@@ -30,7 +30,6 @@ export default function CharacterGalery({characters}: CharacterGaleryProps) {
         } else {
            return showCharacterGalery(characters)
         }
-
     }
 
      function showCharacterGalery(characters: rmCharacter[]) {

@@ -22,7 +22,7 @@ function App() {
           <Routes>
               <Route path="/" element={<GaleryPage characters={characters} />}/>
                   <Route path="/impressum" element={<ImpressumPage/>}/>
-              <Route path="/character/:id" element={<CharacterDetailsPage characters={characters}/>}/>
+              <Route path="/character/:id" element={<CharacterDetailsPage />}/>
           </Routes>
       </BrowserRouter>
   );
